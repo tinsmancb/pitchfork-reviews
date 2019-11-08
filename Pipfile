@@ -9,10 +9,11 @@ verify_ssl = true
 kaggle = "*"
 numpy = "*"
 pandas = "*"
-matplotlib = "*"
 nltk = "*"
 sklearn = "*"
 jupyter = "*"
+seaborn = "*"
+matplotlib = "~=3.0.3"
 
 [requires]
 python_version = "3.7"

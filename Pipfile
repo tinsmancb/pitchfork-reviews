@@ -14,6 +14,9 @@ sklearn = "*"
 jupyter = "*"
 seaborn = "*"
 matplotlib = "~=3.0.3"
+pycodestyle = "*"
+flake8 = "*"
+pycodestyle-magic = "*"
 
 [requires]
 python_version = "3.7"

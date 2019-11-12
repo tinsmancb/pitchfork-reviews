@@ -2,7 +2,44 @@
 
 This is an analysis of 18,393 Pitchfork album reviews taken from kaggle. The
 idea is to see how text features could be used to predict various qualities of
-the album being reviewed.
+the album being reviewed. The raw data is high quality, with labels based on the
+genre of the album being reviewed as well at its score out of ten. Using this 
+data, I looked at three major areas:
+
+## Classifying Reviews By Genre Using Text Features
+Firstly, I take a look at the genre of each review and try to classify it using
+the text features. Since some of the genres don't have very many reviews, I 
+restricted to the top 5: Rock, Electronic, Experimental, Rap, and Pop/R&B. Some
+of the reviews had multiple genres, most commonly rock and something else. I 
+assigned each review to the genre with the least number of total reviews in
+order that each review only had one genre. Them, I explored two methods for
+classifying the data: Selecting features with PCA and then using a SVM to
+classify, or simply using Naive Bayes. In each case, the clearest distinction
+was between rap and the rest of the genres. When using PCA, the other four
+genres were not cleanly separable, and so the classifier had a tendency to
+assign everything as "rock". Although a linear SVM was used, the lack of a clear
+boundary makes it unlikely that some other kernel would be able to separate the 
+classes. The Bernoulli Naive Bayes classifier, on the other hand, was able to
+do a better job.
+
+## Selecting Terms With A High Influence On Score With LASSO
+Simply using the text features to predict the review score using regression
+seemed like it was not feasible, but we can look at the question from a
+different direction: can we find a small set of terms which have an outsized
+influence on the score? This is accomplished by using LASSO to generate a 
+compressed set of text features which have an outsized influence on the review
+score. While the main goal is to analyse the features selected, this method does
+as good a job of predicting the score using the text features as any other I
+tried. The regression was done using the Least Angle Regression method, which
+is most efficient when the number of features is large. The ~30000 text features
+were reduced to about 350 with the most influence on score.
+
+## Looking For The 'Sophomore Slump'
+Conventional wisdom holds that a band typically performs worse on their second
+album than their first, colloquially known as the 'sophomore slump'. This data
+allows us to address this question directly. We look at the distribution of
+album scores for first and second albums, and deduce that there is a detectable
+drop in score overall in a band's second album versus their first.
 
 # Libraries Used
 

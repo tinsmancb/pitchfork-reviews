@@ -3,7 +3,7 @@
 This is an analysis of 18,393 Pitchfork album reviews taken from kaggle. The
 idea is to see how text features could be used to predict various qualities of
 the album being reviewed. The raw data is high quality, with labels based on the
-genre of the album being reviewed as well at its score out of ten. Using this 
+genre of the album being reviewed as well at its score out of ten. A quick writeup of the results is avaiable on [medium]( https://medium.com/@tinsmancb/what-we-can-learn-about-how-pitchfork-writes-about-music-from-14-874-reviews-4ad3262d72d4). Using this 
 data, I looked at three major areas:
 
 ## Classifying Reviews By Genre Using Text Features

@@ -17,6 +17,7 @@ matplotlib = "~=3.0.3"
 pycodestyle = "*"
 flake8 = "*"
 pycodestyle-magic = "*"
+cython = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"
